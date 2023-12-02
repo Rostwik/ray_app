@@ -1,2 +1,8 @@
 environs==9.5.0
 requests~=2.28.2
+Django~=4.2.7
+django-allauth~=0.58.2
+crispy-bootstrap4==2023.1
+dj-database-url==2.1.0
+django-crispy-forms==2.1
+psycopg2-binary==2.9.9

@@ -1,5 +1,8 @@
+<!-- diary/templates/diary/entry_detail.html -->
+
 <h1>{{ entry.event }}</h1>
 <p>Date: {{ entry.date }}</p>
 <p>Feelings: {{ entry.feelings }}</p>
-<a href="{% url 'entry_edit' pk=entry.pk %}">Edit</a>
-<a href="{% url 'entry_delete' pk=entry.pk %}">Delete</a>
+{% if entry.user == user %}
+    <a href="{% url 'entry_edit' pk=entry.pk %}">Edit</a>
+{% endif %}

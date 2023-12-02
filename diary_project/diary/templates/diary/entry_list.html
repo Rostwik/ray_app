@@ -1,6 +1,11 @@
+<!-- diary/templates/diary/entry_list.html -->
+
+
 <h1>Diary Entries</h1>
 <ul>
 {% for entry in entries %}
-    <li><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry }}</a></li>
+    {% if entry.user == user %}
+        <li><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry }}</a></li>
+    {% endif %}
 {% endfor %}
 </ul>
