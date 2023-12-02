@@ -1,0 +1,6 @@
+<h1>Diary Entries</h1>
+<ul>
+{% for entry in entries %}
+    <li><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry }}</a></li>
+{% endfor %}
+</ul>
