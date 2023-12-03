@@ -3,6 +3,8 @@
 <h1>{{ entry.event }}</h1>
 <p>Date: {{ entry.date }}</p>
 <p>Feelings: {{ entry.feelings }}</p>
+<p>Feelings: {{ entry.user }}</p>
 {% if entry.user == user %}
     <a href="{% url 'entry_edit' pk=entry.pk %}">Edit</a>
+    <a href="{% url 'entry_list' %}">Entry list</a><
 {% endif %}

@@ -1,8 +1,9 @@
 <!-- diary/templates/diary/entry_list.html -->
 
 
-<h1>Diary Entries</h1>
+<h1>Diary Entries of {{ user }}</h1>
 <ul>
+    <h2><a href="{% url 'entry_new' %}">Add note</a></h2>
 {% for entry in entries %}
     {% if entry.user == user %}
         <li><a href="{% url 'entry_detail' pk=entry.pk %}">{{ entry }}</a></li>
