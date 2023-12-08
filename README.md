@@ -51,7 +51,7 @@ docker run -p 6379:6379 --name some-redis -d redis
 
 - Запустите Celery в новом окне терминала:
 ```bash
-celery -A picasso worker --loglevel=info
+celery -A diary_project worker --loglevel=info
 ```
 
 - Для корректной работы прогноза погоды, в бд необходимо загрузить координаты городов,

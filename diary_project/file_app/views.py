@@ -4,7 +4,7 @@ from rest_framework import status
 from .models import File
 from .serializers import FileSerializer
 from rest_framework.parsers import FileUploadParser
-from .tasks import process_files
+from file_app.tasks import process_files
 
 
 class GetFilesList(APIView):
@@ -24,7 +24,8 @@ class UploadFileView(APIView):
         file_serializer = FileSerializer(data=request.data)
         if file_serializer.is_valid():
             file_serializer.save()
-            process_files.apply_async()
+            process_files.delay()
+            # process_files.delay()
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

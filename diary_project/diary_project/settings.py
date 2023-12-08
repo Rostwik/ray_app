@@ -19,7 +19,7 @@ env.read_env()
 
 SECRET_KEY = env.str('SECRET_KEY')
 DEBUG = env.bool('DEBUG')
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', '')
+ALLOWED_HOSTS = []
 DATABASE_URL = env('DATABASE_URL')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
